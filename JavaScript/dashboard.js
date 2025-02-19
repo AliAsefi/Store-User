@@ -13,7 +13,11 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const tbodyElement = document.getElementById('tbody');
 
   try{
+    console.log("Fetching users...");  // Debugging log
     const users = await fetchData("users/summary/all");
+
+    console.log("Received users:", users);  // Debugging log
+
     users.forEach(user => {
       const tr = document.createElement('tr');
       tr.innerHTML =`
@@ -31,9 +35,6 @@ document.addEventListener("DOMContentLoaded",async()=>{
   }
 
 });
-
-
-
 
 
 
