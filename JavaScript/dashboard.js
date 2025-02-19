@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const tbodyElement = document.getElementById('tbody');
 
   try{
-    const users = await fetchData("summary/all");
+    const users = await fetchData("users/summary/all");
     users.forEach(user => {
       const tr = document.createElement('tr');
       tr.innerHTML =`
