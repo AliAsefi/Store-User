@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded",async()=>{
         <td>${user.remainingLoanMonths}</td>
         <td>${user.totalAccountBalance}</td>
       `
-      tr.appendChild(td);
       tbodyElement.appendChild(tr);
     });
   }catch(error){
