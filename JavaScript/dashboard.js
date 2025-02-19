@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded",async()=>{
     users.forEach(user => {
       const tr = document.createElement('tr');
       tr.innerHTML =`
-        <td>${user[0]}</td>
         <td>${user.username}</td>
         <td>${user.totalInvestment}</td>
         <td>${user.totalLoan}</td>
