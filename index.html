@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/CSS/index.css">
+</head>
+<body>
+  <h1>Sing in</h1>
+
+  <form id="loginForm">
+
+        <label for="username"><img src="../image/person.svg"></label>
+        <input required type="text" name="username" id="username" placeholder="Username">
+
+        <label for="password"><img src="../image/lock.svg"> </label>
+        <input required type="password" name="password" id="password" placeholder="Password">
+
+      <button type="submit">Login</button>
+  </form>
+
+  <p id="errorMessage" style="color: red; display: none;">Invalid username or password</p>
+
+  <script src="/JavaScript/index.js"></script>
+</body>
+</html>

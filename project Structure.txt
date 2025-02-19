@@ -1,0 +1,16 @@
+/frontend
+│── index.html  (Main page)
+│── users.html  (User list & details)
+│── investments.html  (Investments management)
+│── loans.html  (Loans management)
+│── payments.html  (Payments management)
+│── search.html  (Search users by name/loan)
+│── js/
+│   ├── api.js  (Handles API calls)
+│   ├── users.js  (Handles user-related logic)
+│   ├── investments.js  (Handles investment logic)
+│   ├── loans.js  (Handles loan logic)
+│   ├── payments.js  (Handles payment logic)
+│   ├── search.js  (Handles search functionality)
+│── css/
+│   ├── styles.css  (Styles for the whole site)
