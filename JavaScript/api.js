@@ -1,6 +1,6 @@
 //We create api.js to handle all API requests efficiently.
 
-const API_BASE_URL = "https://localhost:8080/api";
+const API_BASE_URL = "http://localhost:8080/api";
 
 // Generic GET request
 async function fetchData(endpoint) {
