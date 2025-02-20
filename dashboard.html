@@ -8,20 +8,20 @@
 </head>
 <body>
   <h1>List of Users</h1>
+  <input type="text" id="searchInput" placeholder="search by name..." onclick="fillterTable()">
+
   <table id="table">
-    <thead id="thead">
-      <th>Row</th>
-      <th>Name</th>
-      <th>Total Investment</th>
-      <th>Total Loan</th>
-      <th>Loan Balance</th>
-      <th>Remaining Loan Month</th>
-      <th>Total Account Balance</th>
-    </thead>
+    <thead id="thead"></thead>
     <tbody id="tbody"></tbody>
   </table>
 
   <button class="logoutBtn" onclick="logout()">Logout</button>
+
+  <form id="addUserForm">
+    <input type="text" id="firstname" placeholder="Firstname" required>
+    <input type="text" name="lastname" id="lastname" placeholder="Lastname" required>
+    <button type="submit" id="addBtn">Add new user</button>
+  </form>
   
   <script src="JavaScript/dashboard.js"></script>
   <script src="JavaScript/api.js"></script>
