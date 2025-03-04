@@ -1,6 +1,6 @@
 //We create api.js to handle all API requests efficiently.
 
-const API_BASE_URL = "http://userdatastore-production.up.railway.app/api";
+const API_BASE_URL = "https://userdatastore-production.up.railway.app/api";
 
 // Generic GET request
 async function fetchData(endpoint) {
