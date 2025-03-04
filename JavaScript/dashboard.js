@@ -7,16 +7,21 @@ function logout() {
   window.location.href = "login.html";
 }
 
-const tableElement = document.getElementById('table');
+const tableElement = document.getElementById('summarytable');
 
 document.addEventListener("DOMContentLoaded",async()=>{
   const tbodyElement = document.getElementById('tbody');
   const thead = document.getElementById('thead');
 
+  let totalInvestments = 0;
+  let totalLoans = 0;
+  let totalRemainingLoansBalance = 0;
+  let totalAccountsBalance = 0;
+
   try{
     const users = await fetchData("users/summary/all");
 
-      const headers = ['Row','Name','Total Investment','Total Loan','Remaining Loan Balance','Remaining Loan Months','Total Account Balance'];  
+      const headers = ['ردیف','نام','حق عضویت','باقیمانده وام','موجودی'];  
       headers.forEach((user,index)=>{
       const th = document.createElement('th');
       th.textContent = user;
@@ -31,47 +36,69 @@ document.addEventListener("DOMContentLoaded",async()=>{
       tr.style.cursor = 'pointer';
 
       tr.onclick=(()=>{
-        window.location.href = `user.html?userId=${user.userId}`;
+        window.location.href = `users-data.html?userId=${user.userId}`;
       })
       tr.innerHTML =`
         <td>${index + 1}</td>
         <td>${user.username}</td>
-        <td>${user.totalInvestment}</td>
-        <td>${user.totalLoan}</td>
-        <td>${user.remainingLoanBalance}</td>
-        <td>${user.remainingLoanMonths}</td>
-        <td>${user.totalAccountBalance}</td>
+        <td>${user.totalInvestments.toLocaleString('en-US')}<br>
+        <td>${user.totalRemainingLoansBalance.toLocaleString('en-US')}</td>
+        <td>${user.totalAccountsBalance.toLocaleString('en-US')}</td>
       `
-      const deleteBtn = document.createElement('button');
-      deleteBtn.textContent = 'Delete';
-      deleteBtn.onclick = (e)=>{
-        e.stopPropagation();
-        deleteUser(`${user.userId}`);
-      }
+      totalInvestments += user.totalInvestments;
+      totalLoans+= user.totalLoans;
+      totalRemainingLoansBalance += user.totalRemainingLoansBalance;
+      totalAccountsBalance += user.totalAccountsBalance;
 
-      tr.appendChild(deleteBtn);
       tbodyElement.appendChild(tr);
     });
+
+  //Update General Information Table After Calculation
+  const infoTable = document.querySelector('#info tbody'); 
+  infoTable.innerHTML = `
+      <tr>
+        <td>${totalInvestments.toLocaleString('en-US')}</td>
+        <td>${totalRemainingLoansBalance.toLocaleString('en-US')}</td>
+        <td>${totalAccountsBalance.toLocaleString('en-US')}</td>
+      </tr>
+      `;
+
   }catch(error){
     console.error("Error loading users:", error);
   }
 });
 
-function fillterTable(){
-  const searchInput = document.getElementById("searchInput").value;
-  const rows = document.querySelectorAll('#tbody tr');
+// ------------------- Add new user---------------------
+const addUser = document.getElementById('addUserForm');
 
-  rows.forEach(row =>{
-    const username = row.cells[1].textContent.toLowerCase();
-    row.style.display = username.includes(searchInput) ? '' : 'none';
-  })
-}
+addUser.addEventListener('submit',async(e)=>{
+  e.preventDefault();
+
+  const newFirstname = document.getElementById('firstname').value;
+  const newLastname = document.getElementById('lastname').value;
+
+  const newUser = {
+    firstname : newFirstname,
+    lastname : newLastname
+  }
+
+  try {
+    const endpoint = "users/create";
+
+    await postData(endpoint,newUser);
+    alert("عضو جدید اضافه شد");
+    window.location.href = "dashboard.html";
+  } catch (error) {
+    console.error("Error adding user: ", error);
+    alert("عضو جدید اضافه نشد! دوباره تلاش کنید...")
+  }
+})
 
 // Track sorting state for each column
 let sortOrder = {};
 
 function sortTable(columnIndex) {
-  const table = document.querySelector("table tbody");
+  const table = document.querySelector("summarytable tbody");
   const rows = Array.from(table.rows);
 
   // Toggle sorting order
@@ -94,70 +121,14 @@ function sortTable(columnIndex) {
   rows.forEach(row => table.appendChild(row));
 }
 
+/*
+function fillterTable(){
+  const searchInput = document.getElementById("searchInput").value;
+  const rows = document.querySelectorAll('#tbody tr');
 
-const addUser = document.getElementById('addUserForm');
-
-addUser.addEventListener('submit',async(e)=>{
-  e.preventDefault();
-
-  const newFirstname = document.getElementById('firstname').value;
-  const newLastname = document.getElementById('lastname').value;
-
-  const newUser = {
-    firstname : newFirstname,
-    lastname : newLastname
-  }
-
-  try {
-    const endpoint = "users/create";
-
-    await postData(endpoint,newUser);
-    alert("User added successfully!");
-    window.location.href = "dashboard.html";
-  } catch (error) {
-    console.error("Error adding user: ", error);
-    alert("Faild to add user.")
-  }
-})
-
-
-
-async function deleteUser(userId) {
-  if (confirm("Are you sure you want to delete this user?")) {
-      try {
-          await deleteData(`users/${userId}`);  // ✅ Call DELETE API to remove user
-          alert("User deleted successfully!");
-          window.location.href = "dashboard.html"; // ✅ Redirect back to the dashboard
-          //window.location.reload(); // Refresh to see the updated user list
-      } catch (error) {
-          console.error("Error deleting user:", error);
-          alert("Failed to delete user.");
-      }
-  }
+  rows.forEach(row =>{
+    const username = row.cells[1].textContent.toLowerCase();
+    row.style.display = username.includes(searchInput) ? '' : 'none';
+  })
 }
-
-
-
-
-
-
-/*
-private Long userId;
-private String username;
-private Double totalInvestment;
-private Double totalLoan;
-private Double remainingLoanBalance;
-private int remainingLoanMonths;
-private Double totalAccountBalance;
-
-*/
-
-/*
-<th>Row</th>
-<th onclick="sortTable(1)">Name ⬍</th>
-<th>Total Investment</th>
-<th>Total Loan</th>
-<th>Loan Balance</th>
-<th>Remaining Loan Month</th>
-<th>Total Account Balance</th>
-*/
+  */

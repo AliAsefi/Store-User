@@ -1,0 +1,120 @@
+#loanAndPaymentContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;  
+}
+
+.update-form-container {
+  background-color: white;
+  width: 300px;
+}
+
+.update-form-container input {
+
+}
+
+.update-form-container button {
+
+}
+
+.update-form-container button:hover {
+}
+
+
+.loanTable {
+  width: 100%;
+  min-width: 370px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: -10px;
+}
+
+.loanTable thead {
+  background-color: #eb692d;
+  color: white;
+  text-align: center;
+}
+
+.loanTable th {
+  padding: 7px 5px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border: 1px solid #f5f2f2;
+  font-size: 14px;
+}
+
+.loanTable td {
+  padding: 7px 5px;
+  text-align: center;
+  border: 1px solid #f5f2f2;
+  border-bottom: 1px solid #a5a2a2;
+  font-size: 15px;
+}
+
+.loanTable tbody tr:nth-child(even) {
+  background-color: #f2a07a;
+}
+
+.loanTable tbody tr:nth-child(odd) {
+  background-color: #f5c7b1;
+}
+
+.loanTable td:nth-child(4) {
+  width: 100px;
+}
+
+.paymentTable {
+  width: 100%;
+  min-width: 370px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: -10px;
+}
+
+.paymentTable thead {
+  background-color: #4dac12;
+  color: white;
+  text-align: center;
+}
+
+.paymentTable th {
+  padding: 7px 5px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border: 1px solid #f5f2f2;
+  font-size: 14px;
+}
+
+.paymentTable td {
+  padding: 2px 5px;
+  text-align: center;
+  border: 1px solid #f5f2f2;
+  border-bottom: 1px solid #a5a2a2;
+  font-size: 15px;
+}
+
+.paymentTable tbody tr:nth-child(even) {
+  background-color: #8fac7d;
+}
+
+.paymentTable tbody tr:nth-child(odd) {
+  background-color: #bfd3b2;
+}
+
+.paymentTable td:nth-child(4) {
+  width: 100px;
+}
+
+#loansDisplayBtn{
+  position: fixed;
+  top: 80px;
+  width: 130px;
+  font-size: 14px;
+  font-weight: bold;
+}

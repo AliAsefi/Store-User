@@ -1,36 +1,87 @@
 body{
   font-family: Arial, Helvetica, sans-serif;
-  margin: 15px;
   font-size: 14px;
+  margin-top: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.topBar{
+  display: flex;
+  background-color: rgb(202, 230, 201);
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 900;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
 }
 
 .logoutBtn{
   width: 100px;
   padding: 4px;
   cursor: pointer;
-  background-color: rgb(17, 186, 17);
+  background-color: rgb(4, 128, 4);
   border: none;
   border-radius: 4px;
   font-weight: bold;
   position: fixed;
   right: 20px;
-  top: 20px;
+  top: 15px;
+  z-index: 1000;
+  color: #ffffff;
 }
 
 .logoutBtn:hover{
-  background-color: rgba(17, 186, 17, 0.5);
+  background-color: rgba(4, 128, 4, 0.6);
 }
 
-#searchInput{
-  padding: 5px;
-  
+.BackToBtn{
+  width: 120px;
+  padding: 4px;
+  cursor: pointer;
+  background-color: rgb(4, 128, 4);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  position: fixed;
+  left: 20px;
+  top: 15px;
+  z-index: 1000;
+  color: #ffffff;
+}
+
+.BackToBtn:hover{
+  background-color: rgba(4, 128, 4, 0.6);
+}
+
+.BackToPageBtn{
+  width: 120px;
+  padding: 4px;
+  cursor: pointer;
+  background-color: rgb(4, 128, 4);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  position: fixed;
+  left: 150px;
+  top: 15px;
+  z-index: 1000;
+  color: #ffffff;
+}
+
+.BackToPageBtn:hover{
+  background-color: rgba(4, 128, 4, 0.6);
 }
 
 table {
   width: 100%;
+  max-width: 500px;
   border-collapse: collapse;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -71,4 +122,126 @@ table td:nth-child(2)  /* 2nd column is Name */
 /* Align all other columns (money-related) to the right */
 table td:nth-child(n+3) {
     text-align: right;
+}
+
+#addUserForm{
+  display: flex;
+  max-width: 530px;
+  margin: 0 auto;
+  gap: 5px;
+}
+
+#addUserForm input{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px;
+}
+
+#addUserForm button{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px;
+}
+
+#info {
+  margin: auto;
+  width: 100%;
+  max-width: 650px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+#info thead {
+  background-color: #4384d4;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+
+#info th {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border: 1px solid #f5f2f2;
+}
+
+#info td {
+  padding: 12px 15px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+  border: 1px solid #f5f2f2;
+}
+
+#info tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+#info tbody tr:nth-child(even) {
+  background-color: #e9e5e5;
+}
+
+#info tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+#summarytable {
+  margin: auto;
+  width: 100%;
+  max-width: 750px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#summarytable thead {
+  background-color: #27932a;
+  color: white;
+  text-align: center;
+}
+
+#summarytable th {
+  padding: 7px 5px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border: 1px solid #f5f2f2;
+  font-size: 16px;
+}
+
+#summarytable td {
+  padding: 7px 5px;
+  text-align: center;
+  border: 1px solid #f5f2f2;
+  border-bottom: 1px solid #a5a2a2;
+  font-size: 15px;
+}
+
+#summarytable tbody tr:nth-child(even) {
+  background-color: #c3dbca;
+}
+
+#summarytable tbody tr:nth-child(odd) {
+  background-color: #eef9f6;
+}
+
+/* Align 'Name' column to the left */
+#summarytable td:nth-child(2)  /* 2nd column is Name */
+ {
+    text-align: right;
+    width: 150px;
+}
+
+/* Align all other columns (money-related) to the right */
+#summarytable td:nth-child(n+3) {
+    text-align: right;
+}
+
+h2, h3
+{
+  text-align: center;
 }

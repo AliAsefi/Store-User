@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جزییات وام و پرداخت</title>
+  <link rel="stylesheet" href="./CSS/loan-payment-details.css">
+  <link rel="stylesheet" href="./CSS/dashboard.css">
+
+</head>
+<body>
+  <div class="topBar"></div>
+  <h2>اطلاعات تکمیلی مربوط به وام و پرداخت ها</h2>
+  <div id="userData">
+    <h3 id="username">Username</h3>
+    <button onclick="loansDisplayBtn()" id="loansDisplayBtn" value="allLoan">مشاهده تمام وام ها</button>
+  </div>
+  <h2 id="title">لیست وام های ناتمام و پرداخت های انجام شده</h2><br>
+
+  <div id="loanAndPaymentContainer"></div>
+
+  <button class="logoutBtn" onclick="logout()"> خروج از برنامه</button>
+  <button class="BackToBtn" onclick="goBack()">بازگشت به صفحه اول</button>
+  <button class="BackToPageBtn" onclick="goBackToPage()">بازگشت به صفحه قبلی</button>
+
+
+  <script src="JavaScript/loan-payment-details.js"></script>
+  <script src="JavaScript/api.js"></script>
+
+</body>
+</html>

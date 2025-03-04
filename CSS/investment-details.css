@@ -1,0 +1,52 @@
+#investmantsListTable {
+  margin: auto;
+  width: 100%;
+  max-width: 450px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#investmantsListTable thead {
+  background-color: #3575c9;
+  color: white;
+  text-align: center;
+}
+
+#investmantsListTable th {
+  padding: 7px 5px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border: 1px solid #f5f2f2;
+  font-size: 16px;
+}
+
+#investmantsListTable td {
+  padding: 2px 5px;
+  text-align: center;
+  border: 1px solid #f5f2f2;
+  border-bottom: 1px solid #a5a2a2;
+  font-size: 15px;
+}
+
+#investmantsListTable tbody tr:nth-child(even) {
+  background-color: #a4c2e6;
+}
+
+#investmantsListTable tbody tr:nth-child(odd) {
+  background-color: #d9e6f7;
+}
+
+
+/* Align all other columns (money-related) to the right */
+#investmantsListTable td:nth-child(3) {
+    text-align: right;
+}
+
+#deleteInvestmentBtn{
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px;
+}

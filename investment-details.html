@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حق عضویت</title>
+  <link rel="stylesheet" href="./CSS/investment-details.css">
+  <link rel="stylesheet" href="./CSS/dashboard.css">
+
+</head>
+<body>
+  <div class="topBar"></div>
+  <h2>اطلاعات تکمیلی مربوط به حق عضویت</h2>
+  <div id="userData">
+    <h3 id="username">Username</h3>
+  </div>
+
+  <div id="investmentContainer">
+    <h3 id="totalInvestment">مجموع حق عضویت: <span></span></h3><br><br>
+    <table id="investmantsListTable">
+      <thead>
+        <th>ردیف</th>
+        <th>تاریخ</th>
+        <th>مبلغ حق عضویت</th>
+        <th>حذف</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <button class="logoutBtn" onclick="logout()"> خروج از برنامه</button>
+  <button class="BackToBtn" onclick="goBack()">بازگشت به صفحه اول</button>
+  <button class="BackToPageBtn" onclick="goBackToPage()">بازگشت به صفحه قبلی</button>
+
+  <script src="JavaScript/investment-details.js"></script>
+  <script src="JavaScript/api.js"></script>
+
+</body>
+</html>

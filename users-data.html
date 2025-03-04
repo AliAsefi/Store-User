@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investments and Loans</title>
+  <link rel="stylesheet" href="./CSS/users-data.css">
+  <link rel="stylesheet" href="./CSS/dashboard.css">
+
+</head>
+<body>
+  <div class="topBar"></div>
+  <h2>اطلاعات کلی اعضا</h2>
+  <div id="userData">
+    <h3 id="username">Username</h3>
+    <button id="updateUserBtn" onclick="updateUser(userId)">ویرایش نام کاربر</button>
+    <button id="deleteUserBtn" onclick="deleteUser()">حذف کاربر</button>
+    <form id="updateUserForm" style="display: none;">
+      <input type="text"  id="firstname" placeholder="نام" required>
+      <input type="text" id="lastname" placeholder="نام خانوادگی" required>
+      <button type="submit">تایید</button>
+    </form>
+  </div><br><br>
+  <button class="investmentDetailsDisplay" onclick="investmentDetailsDisplay()">مشاهده جزییات حق عضویت</button>
+
+  <div id="investment">
+    <h3 id="totalInvestment">مجموع حق عضویت: <span></span></h3>
+    <form id="addInvestmentForm">
+      <input type="date" id="investmentDate" required>
+      <input type="number" id="investmentAmount" min="0" placeholder="مبلغ حق عضویت" required>
+
+      <button type="submit"> پرداخت حق عضویت </button>
+    </form> 
+
+    <div id="investmentContainer">
+      <h2>لیست 3 پرداخت آخر حق عضویت</h2>
+      <table id="investmantsListTable">
+        <thead>
+          <th>ردیف</th>
+          <th>تاریخ</th>
+          <th>مبلغ حق عضویت</th>
+          <th>حذف</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div><br><br><br><br>
+
+  <div id="loan">
+    <button class="loanAndPaymentDisplay" onclick="loanAndPaymentDisplay()">مشاهده جزییات وام و پرداخت ها</button>
+    <h3 id="totalUnfinishedLoans">مجموع مانده وام ها: <span></span></h3>
+    <form id="addLoanForm">
+      <input type="date" id="loanStartDate" required>
+      <input type="number" id="loanAmount" min="0" placeholder="مبلغ وام" required>
+      <input type="number" id="loanDurationMonths" min="0" placeholder="تعداد ماه بازپرداخت" required>
+
+      <button type="submit"> ایجاد وام جدید</button>
+    </form> 
+    <h2>لیست وام های ناتمام</h2>
+
+    <table id="unfinishedLoansTable">
+      <thead>
+        <th>ردیف</th>
+        <th>تاریخ شروع</th>
+        <th>مبلغ وام</th>
+        <th>تعداد ماه بازپرداخت</th>
+        <th>قسط ماهیانه</th>
+        <th>باقی مانده وام</th>
+        <th>کل اقساط پرداخت شده</th>
+        <th>پرداخت قسط</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div><br><br>
+
+  <button class="logoutBtn" onclick="logout()"> خروج از برنامه</button>
+  <button class="BackToBtn" onclick="goBack()">بازگشت به صفحه اول</button>
+
+  <script src="./JavaScript/users-data.js"></script>
+  <script src="./JavaScript/api.js"></script>
+
+</body>
+</html>

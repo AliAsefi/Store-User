@@ -7,21 +7,36 @@
   <link rel="stylesheet" href="CSS/dashboard.css">
 </head>
 <body>
-  <h1>List of Users</h1>
-  <input type="text" id="searchInput" placeholder="search by name..." onclick="fillterTable()">
+  <div class="topBar"></div>
+  <h2>اطلاعات کل صندوق</h2>
+  <table id="info">
+    <thead>
+      <th>مجموع حق عضویت</th>
+      <th>باقیمانده وام ها</th>
+      <th>موجودی صندوق</th>
+    </thead>
+    <tbody>
 
-  <table id="table">
+    </tbody>
+  </table><br><br><br>
+
+
+  <h2>لیست اعضای صندوق</h2>
+
+  <form id="addUserForm">
+    <input type="text" id="firstname" placeholder="نام" required>
+    <input type="text" name="lastname" id="lastname" placeholder="نام خانوادگی" required>
+    <button type="submit" id="addBtn">اضافه کردن عضو جدید</button>
+  </form><br><br>
+
+  <table id="summarytable">
     <thead id="thead"></thead>
     <tbody id="tbody"></tbody>
   </table>
 
-  <button class="logoutBtn" onclick="logout()">Logout</button>
+  <button class="logoutBtn" onclick="logout()"> خروج از برنامه</button>
 
-  <form id="addUserForm">
-    <input type="text" id="firstname" placeholder="Firstname" required>
-    <input type="text" name="lastname" id="lastname" placeholder="Lastname" required>
-    <button type="submit" id="addBtn">Add new user</button>
-  </form>
+
   
   <script src="JavaScript/dashboard.js"></script>
   <script src="JavaScript/api.js"></script>

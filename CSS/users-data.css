@@ -1,0 +1,189 @@
+#addInvestmentForm{
+  display: flex;
+  max-width: 450px;
+  margin: 0 auto;
+  gap: 5px;
+}
+
+#addLoanForm{
+  display: flex;
+  max-width: 550px;
+  margin: 0 auto;
+  gap: 5px;
+}
+
+#addInvestmentForm input,
+#addLoanForm input{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px;
+  width: 130px;
+}
+
+#addInvestmentForm button,
+#addLoanForm button{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px;
+}
+
+#investmantsListTable {
+  margin: auto;
+  width: 100%;
+  max-width: 450px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#investmantsListTable thead {
+  background-color: #3575c9;
+  color: white;
+  text-align: center;
+}
+
+#investmantsListTable th {
+  padding: 7px 5px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border: 1px solid #f5f2f2;
+  font-size: 16px;
+}
+
+#investmantsListTable td {
+  padding: 7px 5px;
+  text-align: center;
+  border: 1px solid #f5f2f2;
+  border-bottom: 1px solid #a5a2a2;
+  font-size: 15px;
+}
+
+#investmantsListTable tbody tr:nth-child(even) {
+  background-color: #a4c2e6;
+}
+
+#investmantsListTable tbody tr:nth-child(odd) {
+  background-color: #d9e6f7;
+}
+
+
+/* Align all other columns (money-related) to the right */
+#investmantsListTable td:nth-child(3) {
+    text-align: right;
+}
+
+
+#unfinishedLoansTable {
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#unfinishedLoansTable thead {
+  background-color: #eb692d;
+  color: white;
+  text-align: center;
+}
+
+#unfinishedLoansTable th {
+  padding: 7px 5px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border: 1px solid #f5f2f2;
+  font-size: 14px;
+}
+
+#unfinishedLoansTable td {
+  padding: 7px 5px;
+  text-align: center;
+  border: 1px solid #f5f2f2;
+  border-bottom: 1px solid #a5a2a2;
+  font-size: 15px;
+}
+
+#unfinishedLoansTable tbody tr:nth-child(even) {
+  background-color: #f2a07a;
+}
+
+#unfinishedLoansTable tbody tr:nth-child(odd) {
+  background-color: #f5c7b1;
+}
+
+/* Align all other columns (money-related) to the right */
+#unfinishedLoansTable td:nth-child(n+3) {
+  text-align: right;
+}
+
+#unfinishedLoansTable td:nth-child(8) {
+  text-align: left;
+}
+#unfinishedLoansTable td:nth-child(2) {
+  width: 100px;
+}
+
+.addPaymentForm{
+  position: relative;
+  padding: 2px;
+  margin: 2px;
+}
+.addPaymentForm input{
+  width: 110px;
+  padding: 2px;
+  margin: 2px;
+  font-size: 14px;
+  padding: 3px;
+}
+
+.addPaymentForm button{
+  width: 116px;
+  padding: 2px;
+  margin: 2px;
+  font-size: 14px;
+  padding: 3px;
+}
+
+.investmentDetailsDisplay,
+.loanAndPaymentDisplay{
+  position: fixed;
+  width: 170px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.investmentDetailsDisplay{
+  top: 70px;
+  right: 10px;
+}
+
+.loanAndPaymentDisplay{
+  top: 100px;
+  right: 10px;
+}
+
+#updateUserBtn{
+  position: fixed;
+  width: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  top: 100px;
+}
+
+#deleteUserBtn{
+  position: fixed;
+  width: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  top: 70px;
+}
+
+#updateUserForm{
+  width: 300px;
+  font-size: 20px;
+}
