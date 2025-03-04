@@ -1,5 +1,5 @@
 if (localStorage.getItem("loginKey") !== "true") {
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 function logout() {

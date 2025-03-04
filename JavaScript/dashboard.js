@@ -1,10 +1,10 @@
 if (localStorage.getItem("loginKey") !== "true") {
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 function logout() {
   localStorage.removeItem("loginKey");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 const tableElement = document.getElementById('summarytable');
